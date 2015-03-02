@@ -74,7 +74,7 @@ angular.module('app', ['ngAnimate','ui.router', 'ngCookies', 'ngLodash','ngTouch
         })
         .state('home.main', {
         	url: '/main',
-        	templateUrl: '/partials/partial-home-main.html',
+        	templateUrl: 'app/home/partial-home-main.html',
         	authenticate: false
         })
         .state('home.create', {
