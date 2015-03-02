@@ -1,0 +1,16 @@
+<md-toolbar layout="row" layout-align="center center" ng-controller="NavbarCtrl">
+
+  <md-button href="https://github.com/Swiip/generator-gulp-angular">
+  	<b>R<span style="color:#D63333">3</span>VL <span style="font-weight:100">{</span><span style="color:#D63333; font-weight:100">BETA</span><span style="font-weight:100">}</span></b>
+  </md-button>
+
+  <section flex layout="row" layout-align="left center">
+    <md-button href="#" class="md-raised"><a ui-sref="home.join" style="color:#D63333">Join a Party</a></md-button>
+    <md-button href="#" class="md-raised"><a ui-sref="home.create" style="color:#D63333">Create a Party</a></md-button>
+    <md-button href="#" class="md-raised"><a ui-sref="aboutus" style="color:#D63333">About Us</a></md-button>
+    <md-button href="#" class="md-raised"><a href="#" style="color:#D63333">Contact</a></md-button>
+  </section>
+
+  <md-button href="#">Current date: {{ date | date:'yyyy-MM-dd' }}</md-button>
+
+</md-toolbar>

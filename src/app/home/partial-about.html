@@ -1,0 +1,60 @@
+<div data-ng-show="uiRouterState.current.name === 'home.main' || uiRouterState.current.name === 'home.aboutus'">
+  <div layout="row" layout-margin>
+    <div class="row mt centered">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h1>Now Playing: YOU!</h1>
+        <h3>R<span style="color:#D63333">3</span>VL allows guests to select, vote and play their favorite songs</h3>
+      </div>
+    </div>
+    <div layout="row" layout-margin>
+      <div flex="33">
+        <img src="/img/ser01.png" width="180" alt="">
+        <h4>1 - Make A Party</h4>
+        <p>Begin with using your phone, tablet or laptop to create a party. Choose a unique name and make sure the device is plugged into the speakers! </p>
+      </div>
+      <div flex="33">
+        <img src="/img/ser03.png" width="180" alt="">
+        <h4>2 - Invite your Friends</h4>
+        <p>Invite your friends to the party! Have them join using your unique party name.</p>
+      </div>
+      <div flex="33">
+        <img src="/img/ser02.png" width="180" alt="">
+        <h4>3 - Add Music</h4>
+        <p>After joining a party, users can search and add songs that will automatically be played!</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <hr>
+  </div>
+  <div class="container">
+  <div class="col-sm-6 col-sm-offset-3">
+    <div class="row mt centered">
+      <div class="col-sm-12">
+        <h1>Now Playing At</h1>
+        <div class="row mt centered">
+          <div class="col-sm-4">
+            <img class="img-responsive img-center" src="/img/uc.png"  alt="">
+            <!--<h4>UC</h4>-->
+          </div>
+          <div class="col-sm-4">
+            <img class="img-responsive img-center" src="/img/ou.png" alt="">
+            <!--<h4>OU</h4>-->
+          </div>
+          <div class="col-sm-4">
+            <img class="img-responsive img-center" src="/img/xu.png"  alt="">
+            <!--<h4>XU</h4>-->
+          </div>
+        </div>
+         <!-- cookie testing block -->       
+        <div ng-controller="tutCtrl">
+          <div ng-hide="show >= 1">
+            Hellow, stranger!
+          </div>
+        </div>
+      </div>
+      <span id="trademarks">All trademarks, service marks, trade names, trade dress, product names and logos appearing on the site are the property of their respective owners</span>
+    </div>
+  </div>
+</div>
+</div>
