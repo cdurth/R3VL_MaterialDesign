@@ -1,0 +1,17 @@
+<md-toolbar id="side-nav">
+<h1 id="side-nav-title" ui-sref="home">
+	<b>R<span style="color:#D63333">3</span>VL <span style="font-weight:100">{</span><span style="color:#D63333; font-weight:100">BETA</span><span style="font-weight:100">}</span></b>
+</h1>
+</md-toolbar>
+<md-list>
+	<md-item ng-repeat="it in ul.users">
+		<md-button ng-click="ul.selectUser(it)" ui-sref="{{it.route}}">
+			<md-icon md-svg-icon="{{it.avatar}}" class="image"></md-icon>
+			<div class="side-item-text-wrap">
+				<h3>{{it.name}}</h3>
+			</div>
+		</md-button>
+		<md-divider></md-divider>
+	</md-item>
+
+</md-list>

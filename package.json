@@ -1,7 +1,10 @@
 {
-  "name": "app",
+  "name": "material-start",
+  "private": true,
   "version": "0.0.0",
-  "dependencies": {},
+  "description": "A starter project for AngularJS Material",
+  "repository": "https://github.com/angular/material-start",
+  "license": "MIT",
   "devDependencies": {
     "gulp": "~3.8.10",
     "gulp-autoprefixer": "~2.0.0",
@@ -38,7 +41,8 @@
     "protractor": "~1.4.0",
     "uglify-save-license": "~0.4.1"
   },
-  "engines": {
-    "node": ">=0.10.0"
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm update"
   }
 }

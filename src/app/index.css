@@ -1,55 +1,132 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
-
-html {
-  font-family: 'Roboto Slab', serif;
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size:14px;
+  height:100%;
+  margin: 0px;
+  padding: 0px;
 }
 
-[layout=row] {
-  flex-direction: row;
+
+
+/* Sidenav area */
+
+md-list .md-button {
+  color: inherit;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+}
+  md-list .md-button.selected {
+    color: #03a9f4;
+  }
+
+  md-sidenav  md-list {
+    padding: 0px 0px 8px 0px;
+  }
+
+
+/* Primary content area */
+
+#content {
+  overflow: hidden;
+}
+#content-wrap {
+  width:100%;
+  background: url(../assets/svg/newbg.svg) no-repeat center center;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#content-wrap md-content{
+  margin: auto;
+  background: transparent;
 }
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+#content  {
+  padding-top: 5px;
 }
 
-.thumbnail {
-  height: 200px;
+#content .md-button.share {
+  background-color: transparent;
+  border: none;
+  width: 48px;
+  height: 48px;
+  margin: 8px auto 16px 0;
+  position: absolute;
+  top: 10px;
+  right: 25px;
 }
 
-.thumbnail img.pull-right {
-  width: 50px;
+#content md-icon.avatar {
+  margin-top: 10px;
 }
 
-md-toolbar.md-default-theme {
-  background-color: black;
+#content .md-button.share > md-icon {
+  fill:black;
+  width:36px;
+  height:36px;
 }
 
-section.jumbotron {
-  margin-bottom: 30px;
-  padding: 1px 30px;
-  background-color: #5aadbb;
-  text-align: center;
-
-  color: white;
+md-button.menuBtn > md-icon {
+  fill:white;
+  width:24px;
+  height:24px;
 }
 
-section.jumbotron h1 {
-  font-size: 3em;
+#content .md-button.share:active > md-icon {
+  background-color: #dadada;
+  border-radius: 75%;
+  padding:4px;
+  transition: all 100ms ease-out 30ms;
 }
 
-.techs {
-  display: flex;
-  flex-flow: row wrap;
+#content img {
+  display: block;
+  height: auto;
+  max-width: 500px;
 }
 
-.techs md-card {
-  width: 30%;
+/* Utils */
+
+.content-wrapper {
+  position: relative;
 }
 
-.techs md-card img.pull-right {
-  float: right;
-  width: 50px;
+/* Typography support coming in 0.8.0 */
+
+md-toolbar h1 {
+  font-size: 1.250em;
+  font-weight: 400;
+}
+
+.avatar {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0px;
+  vertical-align: middle;
+  zoom:0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform:scale(0.70);
+}
+
+
+md-bottom-sheet  md-icon {
+  margin-right:20px;
+}
+
+span.name {
+  font-weight: bold;
+  font-size:1.1em;
+  padding-left:5px;
 }

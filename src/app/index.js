@@ -1,109 +1,51 @@
-'use strict';
-
-angular.module('app', ['ngAnimate','ui.router', 'ngCookies', 'ngLodash','ngTouch', 'ngSanitize', 'ngMaterial'])
-
-.run(function ($rootScope, $state, AuthService) {
-    $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
-		if (toState.authenticate && !AuthService.isLoggedIn()){
-			// User isn’t authenticated
-			setTimeout(function(){
-
-				$state.transitionTo('home.app', {'partyID': toParams.partyID});
-			}, 2000);
-			event.preventDefault(); 
-		}
-    });
-})
-//########################################################################################
-// Services: 
-//########################################################################################
-.factory('AuthService', function(SessionService) {
-	return {
-		login: function (user) {
-		  console.log(user.partyID);
-		  SessionService.partyID = user.partyID;
-		  SessionService.password = user.password;
-		},
-		logout: function(){
-			SessionService.partyID = null;
-			SessionService.password = null;
-		},
-		isLoggedIn: function () {
-		  return SessionService.partyID !== null;
-		}
-  	};	
-})
-
-.factory('SessionService', function () {
-  return {
-    partyID: null
-  };
-})
-//########################################################################################
-// Config: 
-//########################################################################################
-.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-	alert('router');
-    $urlRouterProvider.otherwise('home/main');
+angular
+  .module('app', ['ngMaterial', 'ngAnimate','ngCookies','ngLodash', 'ui.router', 'sideBarLeft'])
+  .config(function($stateProvider, $urlRouterProvider,$mdThemingProvider, $mdIconProvider){
     $stateProvider
-        .state('home', {
-        	views: {
-        		"": {
-		            templateUrl: 'app/home/partial-home.html',
-		            controller: 'homeCtrl',
-        		},
-        		"about": {
-        			templateUrl: 'app/home/partial-about.html',
-        			controller: 'homeCtrl'
-        		}
-        	},
-        	url: '/home',
-        	controller: 'homeCtrl',
-        	authenticate: false
-        })
-        .state('aboutus', {
-        	views: {
-        		"": {
-		            templateUrl: '/partials/partial-aboutus.html',
-		            controller: 'homeCtrl',
-        		}
-        	},
-        	url: '/aboutus',
-        	controller: 'homeCtrl',
-        	authenticate: false
-        })
-        .state('home.main', {
-        	url: '/main',
-        	templateUrl: 'app/home/partial-home-main.html',
-        	authenticate: false
-        })
-        .state('home.create', {
-            url: '/create',
-            templateUrl: '/partials/partial-create.html',
-            controller: 'createCtrl',
-			authenticate: false
-        })
-        .state('home.join', {
-        	url: '/join',
-        	templateUrl: '/partials/partial-join.html',
-			controller: 'joinCtrl',
-			authenticate: false,
-        })
-		.state('home.app', {
-        	url: '/app/:partyID',
-        	templateUrl: '/partials/partial-app.html',
-        	controller: 'appCtrl',
-			authenticate: false
-        })
-        .state('admin', {
-        	url: '/admin/:partyID',
-        	templateUrl: '/partials/partial-admin.html',
-        	controller: 'adminCtrl',
-			authenticate: true,
-			resolve:{
-			    initialHandler: function($http, $stateParams){
-			        return $http({method: 'GET', url: '/api/handler/'+$stateParams.partyID});
-			    }
-			}
-        });
-});
+      .state('home', {
+        url: '/',
+        templateUrl: 'app/main/main.html',
+        controller: 'mainCtrl'
+      })
+    .state('join', {
+        url: '/join',
+        templateUrl: 'app/party/join.html',
+        authenticate: false
+    })
+    .state('create', {
+        url: '/create',
+        templateUrl: 'app/admin/create.html',
+        authenticate: false
+    })
+    .state('about', {
+        url: '/about',
+        templateUrl: 'app/about/about.html',
+        authenticate: false
+    })        
+    .state('contact', {
+        url: '/contact',
+        templateUrl: 'app/contact/contact.html',
+        authenticate: false
+    });
+        
+
+    $urlRouterProvider.otherwise('/');
+
+
+    $mdIconProvider
+      .icon("vinyl"      , "./assets/svg/vinyl.svg"       , 128)
+      .icon("party"      , "./assets/svg/party.svg"       , 128)
+      .icon("question"   , "./assets/svg/question.svg"    , 128)
+      .icon("email"      , "./assets/svg/email.svg"       , 128)
+      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+      .icon("share"      , "./assets/svg/share.svg"       , 24)
+      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+
+      $mdThemingProvider.theme('default')
+        .primaryPalette('brown')
+        .accentPalette('red');
+
+  });

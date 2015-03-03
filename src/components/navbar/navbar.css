@@ -1,0 +1,19 @@
+/* Toolbar area */
+#nav {
+	background-color: #f8f8f8;
+}
+#nav.md-default-theme .md-button {
+	color:black;
+}
+.menu {
+	background-color: whitesmoke;
+	height: 38px;
+	margin: 16px;
+	width: 36px;
+}
+#nav-title {
+	color: black;
+	/*padding-left: 10px;*/
+	padding-top:5px;
+}
+
