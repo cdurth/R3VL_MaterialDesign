@@ -1,1 +1,30 @@
-create html page
+<div layout="row" layout-sm="column" layout-margin>
+		<div flex>
+		<md-dialog class="md-default-theme transition-in" role="dialog">
+			<md-content >
+				<h2>Create A Party</h2>
+				<p>Lets get the music blastin!</p>
+				<md-input-container>
+			        <label>Party Name</label>
+			        <input required name="partyID" ng-model="party.partyID" ng-pattern="/^[a-zA-Z0-9]*$/">
+			        <div ng-messages="projectForm.clientName.$error">
+          				<div ng-message="required">This is required.</div>
+        			</div>
+			    </md-input-container>
+				<md-input-container>
+			        <label>Password</label>
+			        <input required name="partyID" type="password" ng-model="party.password">
+			    </md-input-container>
+				<md-input-container>
+			        <label>Confirm Password</label>
+			        <input required name="partyID" type="password" ng-model="party.password_verify">
+			    </md-input-container>
+			</md-content>
+			<div class="md-actions">
+				<button class="md-primary md-button md-default-theme" ng-transclude="" ng-click="createParty(party)" tabindex="0">
+					<span>CREATE</span>
+				</button>
+			</div>
+		</md-dialog>
+	</div>
+</div>

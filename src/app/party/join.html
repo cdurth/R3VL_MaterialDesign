@@ -1,1 +1,19 @@
-join html page
+<div layout="row" layout-sm="column" layout-margin>
+		<div flex>
+		<md-dialog class="md-default-theme transition-in" role="dialog">
+			<md-content >
+				<h2>Join A Party</h2>
+				<p>Lets get you connected!</p>
+				<md-input-container>
+			        <label>Party Name</label>
+			        <input required name="partyID" ng-model="partyID">
+			    </md-input-container>
+			</md-content>
+			<div class="md-actions">
+				<button class="md-primary md-button md-default-theme" ng-transclude="" ng-click="joinParty(partyID)" tabindex="0">
+					<span>JOIN</span>
+				</button>
+			</div>
+		</md-dialog>
+	</div>
+</div>

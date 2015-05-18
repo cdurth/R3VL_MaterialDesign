@@ -1,27 +1,25 @@
-<div layout="row" layout-margin>
+<div layout="row" layout-sm="column" layout-margin>
 	<div flex>
 		<md-dialog class="md-default-theme transition-in" role="dialog">
 			<md-content >
 				<h2>Already at a party?</h2>
-				<p>Lets get this party you connected!</p>
+				<p>Lets get you connected! this is a test of word wrapping in this box</p>
 			</md-content>
-			<div class="md-actions"><!-- ngIf: dialog.$type == 'confirm' -->
-				<button class="md-primary md-button md-default-theme" ng-transclude="" ng-click="dialog.hide()" tabindex="0">
+			<div class="md-actions">
+				<button class="md-primary md-button md-default-theme" ng-transclude="" ui-sref="join" tabindex="0">
 					<span>JOIN</span>
 				</button>
 			</div>
 		</md-dialog>
 	</div>
-</div>
-<div layout="row" layout-margin>
 	<div flex>
 		<md-dialog class="md-default-theme transition-in" role="dialog">
 			<md-content >
 				<h2>Where is the music?</h2>
-				<p>Lets get this party started!</p>
+				<p>Lets get this party started! this is a test of word wrapping in this box</p>
 			</md-content>
-			<div class="md-actions"><!-- ngIf: dialog.$type == 'confirm' -->
-				<button class="md-primary md-button md-default-theme" ng-transclude="" ng-click="dialog.hide()" tabindex="0">
+			<div class="md-actions">
+				<button class="md-primary md-button md-default-theme" ng-transclude="" ui-sref="create" tabindex="0">
 					<span>CREATE</span>
 				</button>
 			</div>
